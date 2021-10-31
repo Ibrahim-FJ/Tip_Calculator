@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/cost_of_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/cost_of_service_edit_text"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textColorHint="@color/gray"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/how_was_the_service_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/cost_of_service"
+        app:layout_constraintStart_toStartOf="@+id/cost_of_service"
+        android:layout_marginTop="8dp"
+        android:text="@string/how_was_the_service_text_view"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radio_group"
+        android:orientation="vertical"
+        android:checkedButton="@id/amazing"
+        app:layout_constraintTop_toBottomOf="@+id/how_was_the_service_text_view"
+        app:layout_constraintStart_toStartOf="@+id/cost_of_service">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/amazing"
+            android:text="@string/amazing_radio_button"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/good"
+            android:text="@string/good_radio_button"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ok"
+            android:text="@string/ok_radio_button"/>
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/round_tip_switch"
+        android:layout_marginEnd="8dp"
+        android:checked="true"
+        app:layout_constraintTop_toBottomOf="@+id/radio_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/cost_of_service"
+        android:text="@string/round_up_tip_switch"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calculate_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/purple_500"
+        android:text="@string/calculate_button"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/round_tip_switch"
+        app:layout_constraintStart_toStartOf="@+id/cost_of_service"
+        app:layout_constraintTop_toBottomOf="@+id/round_tip_switch" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tipAmount_textView"
+        app:layout_constraintTop_toBottomOf="@id/calculate_button"
+        app:layout_constraintEnd_toEndOf="@id/round_tip_switch"
+        tools:text="Tip Amount: $10"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
